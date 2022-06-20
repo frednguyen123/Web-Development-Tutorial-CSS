@@ -1,0 +1,514 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Roboto:wght@300;400;500;700&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+/*to stretched page width*/
+body{
+    max-width: 100vw;
+    overflow-x: hidden;
+}
+
+.no-cursor{
+    cursor: not-allowed;
+}
+
+/*NAV BAR*/
+
+/*nav bar height 80px*/
+nav{
+    height: 80px;
+    display: flex;
+}
+
+/*image will be 100% of its parent*/
+.img{
+    width: 100%;
+}
+
+/*changed height between lines*/
+p{
+    line-height: 1.5;
+}
+
+/*no underline static*/
+a{
+    text-decoration: none;
+}
+
+/*underline links when hover*/
+a:hover{
+    text-decoration: underline;
+}
+
+/*container stops elements inside of it from stretching 
+  certain width */
+.nav__container{
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+}
+
+/*text color purple*/
+.purple{
+    color: #7342b6;
+}
+
+/*logo size*/
+.logo{
+    width: 160px;
+}
+
+/*nav bar height 80px*/
+ul{
+    display: flex;
+}
+
+/*removes bullet points from links*/
+li{
+    list-style-type: none;
+}
+
+/*margin on the left, no underline, padding*/
+.nav__link{
+    margin-left: 16px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #7342b6;
+    font-weight: bold;
+    padding: 8px;
+}
+
+/*when hovering underline lights up*/
+.nav__link:hover{
+    text-decoration: underline;
+}
+
+/*creates border with rounded edges around last list item */
+.nav__link--primary{
+    border: 2px solid #7342b6;
+    border-radius: 4px;
+}
+
+/*comes after so it has priority when hovering no underline*/
+.nav__link--primary:hover{
+    text-decoration: none;
+}
+
+.btn__menu{
+    background-color: transparent;
+    font-size: 40px;
+    text-align: center;
+    border: none;
+    color: #7342b6;
+    display:none;
+}
+
+.menu__backdrop{
+    position: absolute;
+    background-color: #242424;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 300ms ease;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.menu--open .menu__backdrop{
+    display: flex;
+    visibility: visible;
+    opacity: 1;
+}
+
+.btn__menu--close{
+    position: absolute;
+    right:20px;
+    top:10px;
+    padding: 8px;
+    color: white;
+}
+
+.menu__links{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.menu__list{
+    padding: 32px 0;
+}
+
+.menu__link{
+    font-size: 40px;
+    color: white;
+}
+
+.menu--open{
+    max-height: 100vh;
+    overflow-y: hidden;
+}
+
+/*LANDING*/
+
+/*landing page block color*/
+#landing{
+    background-color: rgba(115,66,214,0.1)
+}
+
+/*extends the background color to whole landing page,
+include header, 100vh is full page without scrolling
+minus the 80px height from nav bar*/
+header{
+    height: calc(100vh - 80px)
+}
+
+/*container holds description and image
+which is limited in width so it cannot be stretched
+more */
+
+/*later added padding top so that words dont come out of 
+the container*/
+.header__container{
+    padding-top: 32px;
+    width: 100%;
+    max-width: 720px;
+    margin: 0 auto;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+/*places elements in column and centers*/
+.header__description{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/*heading 1 attributes*/
+h1{
+    font-size: 56px;
+    color: #7342b6;
+    margin-bottom: 24px;
+    text-align: center;
+}
+
+/*heading 2 attributes*/
+h2{
+    font-size: 32px;
+    margin-bottom: 32px;
+    text-align: center;
+}
+
+/*allows button to have a cursor when hovered*/
+button{
+    cursor: pointer;
+}
+
+/*when button is pressed it moves a little bit 
+to signal that it's being pressed*/
+button:active{
+    transform: translateY(1px);
+}
+
+/*button attributes*/
+.btn{
+    background-color:#7342b6;
+    color: white;
+    padding: 12px 24px;
+    font-size: 20px;
+    border-radius: 4px;
+    border: none;
+}
+
+/*image padding*/
+.header__img--wrapper{
+    padding: 20px;
+    z-index: 2;   
+}
+
+
+/*added max height to 50vh for laptops
+text was coming off the top of the screen*/
+.img{
+    width: 100%;
+    height: 100%;
+    max-height: 50vh;
+    padding: 20px;
+}
+
+/* MAIN */
+
+/*container for highlights section*/
+.container{
+    padding: 56px 0;
+}
+
+/*row 'container' for highlights section,
+can't be stretched passed certain length*/
+.row{
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+/* HIGHLIGHTS */
+
+/*parent to pseudo classes */
+#highlights{
+    position: relative;
+    max-width: 100vw;
+}
+
+/*wave pattern, height bigger the larger the screen
+cover scales image large as possible without stretching image
+image won't repeat, translate to move it up Y-axis*/
+#highlights:before{
+    background: url('assets/wave.svg');
+    content: "";
+    position: absolute;
+    width: 101vw;
+    height: 12vw;
+    top: 1px;
+    left: 0;
+    z-index: 1;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transform: translateY(-100%);
+}
+
+/*wave pattern, height bigger the larger the screen
+cover scales image large as possible without stretching image
+image won't repeat, translate to move down up Y-axis,
+change from top to bottom*/
+#highlights:after{
+    background: url('assets/wave.svg');
+    content: "";
+    position: absolute;
+    width: 101vw;
+    height: 12vw;
+    bottom: 1px;
+    left: 0;
+    z-index: 1;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transform: translateY(100%) rotate(180deg);
+}
+
+/*wrapper container that contains three elements
+named highlight*/
+.highlight__wrapper{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/*highlight contains elements of the highlight
+image, subtitle, and para*/
+.highlight{
+    padding: 0 24px;
+    width: calc(100%/3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/*element of text in highlight*/
+.highlight__para{
+    text-align: center;
+    max-width: 280px;
+}
+
+/*actual lightning bolt image, can use font-size to
+change the image.*/
+.highlight__img{
+    border: 2px solid #7342b65d;
+    color: #7342b6;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    font-size: 32px;
+    margin-bottom: 24px;
+}
+
+/*element of subtitle in highlight*/
+.highlight__subtitle{
+    font-size: 20px;
+    margin-bottom: 16px;
+    text-align: center;
+}
+
+/* FEATURES */
+
+/*use vw because psuedo classes*/
+#features {
+    padding-top: 8vw;
+    background-color: rgba(115,66,214,0.1);
+}
+
+/*use vw because psuedo classes*/
+.books {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/*4 books on a page*/
+.book {
+    width: 25%;
+    padding: 8px;
+}
+
+/*image of the book, no cursor since no linked pages*/
+.book__img {
+    max-height: 300px;
+    transition: all 300ms ease;
+    cursor: no-drop;
+}
+
+/*container wrapper for the image, hidden overflow,
+so that border radius makes rounded edges*/
+.book__img--wrapper{
+    margin-bottom: 8px;
+    border-radius: 4px;
+    display: flex;
+    overflow: hidden;
+}
+
+/*on book hover the image gets larger*/
+.book:hover .book__img{
+    transform: scale(1.03);
+}
+
+/*book title*/
+.book__title{
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+/*on hover the title is underlined, no cursor
+because no linked pages yet*/
+.book__title:hover {
+    text-decoration: underline;
+    cursor: not-allowed;
+}
+
+/*change rating color +  added space below*/
+.book__ratings {
+    margin-bottom: 8px;
+    color: #fabf2a;
+}
+
+/*book prices crossed out with lighter font,
+indicates sale*/
+.book__price--normal{
+    text-decoration: line-through;
+    padding-right: 6px;
+    color: #bfbfbf;
+}
+
+
+/*EXPLORE*/
+
+#explore{
+    background-color: rgba(115,66,214,0.1);
+}
+
+.row__column{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/*FOOTER*/
+
+footer{
+    background-color: #242424;
+}
+
+/* fits the parent and child*/
+.footer__logo{
+    display: flex;
+}
+
+/* grayscale turns it back and white,
+and invert makes it white*/
+.footer__logo--img{
+    width: 160px;
+    filter: grayscale(1) invert(1);
+}
+
+/*white font*/
+.footer__link,
+.footer__copyright {
+    color: #fff;
+
+}
+
+/*top and bottom margin*/
+.footer__list{
+    margin: 20px 0 24px 0;
+}
+
+/*left and right margin*/
+.footer__link{
+    padding: 0 8px;
+}
+
+
+/*SMALL PHONES, TABLETS, LARGE PHONES*/
+@media(max-width: 768px){
+    .header__description{
+        padding: 0 24px;
+    }
+    h1{
+        font-size: 40px;
+    }
+    h2{
+        font-size: 26px;
+    }
+    button{
+        font-size: 18px;
+    }
+    .book{
+        width: 50%;
+    }
+}
+
+
+/*SMALL PHONES, LARGE PHONES*/
+@media(max-width: 550px){
+    .nav__links{
+        display: none;
+    }
+    .btn__menu{
+        display: block;
+    }
+    .highlight{
+        width: 100%;
+        margin-bottom: 24px;
+    }
+
+    .highlight:not(:last-child){
+        margin-bottom: 24px;
+    }
+}
+
