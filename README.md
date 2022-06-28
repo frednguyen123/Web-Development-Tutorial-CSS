@@ -21,5 +21,5 @@
 ![mobile4](https://user-images.githubusercontent.com/107221212/174542385-c542ab96-d1cf-4c13-8b22-ffd8aa210a26.PNG)
 
 ### CSS Final Project 
-
-
+![Screenshot (78)](https://user-images.githubusercontent.com/107221212/176113758-2547e5f6-f9d9-4b0c-aaf4-e84c1701ba75.png)
+![Screenshot (79)](https://user-images.githubusercontent.com/107221212/176113869-8f7a326e-3dd9-493b-b014-623623bf36db.png)
